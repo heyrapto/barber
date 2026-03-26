@@ -13,13 +13,13 @@ const fontUrl = 'https://cdn.jsdelivr.net/npm/three/examples/fonts/helvetiker_bo
 const Particles = () => {
   const { mouse, viewport } = useThree();
   const pointsRef = useRef<THREE.Points>(null);
-  
+
   const material = useMemo(() => new THREE.ShaderMaterial({
     uniforms: {
-        uTime: { value: 0 },
-        uMouse: { value: new THREE.Vector3(0, 0, 0) },
-        uColor: { value: new THREE.Color('#FF6600') },
-        uHoverColor: { value: new THREE.Color('#00FFFF') } // Cyan color burst
+      uTime: { value: 0 },
+      uMouse: { value: new THREE.Vector3(0, 0, 0) },
+      uColor: { value: new THREE.Color('#FF6600') },
+      uHoverColor: { value: new THREE.Color('#00FFFF') } // Cyan color burst
     },
     vertexShader: `
         uniform float uTime;
@@ -101,70 +101,70 @@ const Particles = () => {
   useEffect(() => {
     const loader = new FontLoader();
     loader.load(fontUrl, (font) => {
-        // Reverted text to "PRECISION"
-        const denseGeo = new TextGeometry('PRECISION', {
-             font: font,
-             size: 7.5,
-             depth: 0.5,
-             curveSegments: 12, 
-             bevelEnabled: true,
-             bevelThickness: 0.1,
-             bevelSize: 0.05,
-             bevelSegments: 4
-        });
-        denseGeo.center();
-        
-        const posAttribute = denseGeo.attributes.position;
-        const positions = [];
-        const scales = [];
-        const randoms = [];
+      // Reverted text to "PRECISION"
+      const denseGeo = new TextGeometry('SECURE', {
+        font: font,
+        size: 7.5,
+        depth: 0.5,
+        curveSegments: 12,
+        bevelEnabled: true,
+        bevelThickness: 0.1,
+        bevelSize: 0.05,
+        bevelSegments: 4
+      });
+      denseGeo.center();
 
-        // High density
-        for (let i = 0; i < posAttribute.count; i++) {
-            const x = posAttribute.getX(i);
-            const y = posAttribute.getY(i);
-            const z = posAttribute.getZ(i);
+      const posAttribute = denseGeo.attributes.position;
+      const positions = [];
+      const scales = [];
+      const randoms = [];
 
-            for(let j=0; j<4; j++) {
-                 positions.push(
-                    x + (Math.random()-0.5) * 0.25,
-                    y + (Math.random()-0.5) * 0.25,
-                    z + (Math.random()-0.5) * 0.25
-                 );
-                 scales.push(Math.random() * 0.6 + 0.4);
-                 randoms.push(Math.random(), Math.random(), Math.random());
-            }
+      // High density
+      for (let i = 0; i < posAttribute.count; i++) {
+        const x = posAttribute.getX(i);
+        const y = posAttribute.getY(i);
+        const z = posAttribute.getZ(i);
+
+        for (let j = 0; j < 4; j++) {
+          positions.push(
+            x + (Math.random() - 0.5) * 0.25,
+            y + (Math.random() - 0.5) * 0.25,
+            z + (Math.random() - 0.5) * 0.25
+          );
+          scales.push(Math.random() * 0.6 + 0.4);
+          randoms.push(Math.random(), Math.random(), Math.random());
         }
-        
-        const bufferGeo = new THREE.BufferGeometry();
-        bufferGeo.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
-        bufferGeo.setAttribute('aScale', new THREE.Float32BufferAttribute(scales, 1));
-        bufferGeo.setAttribute('aRandom', new THREE.Float32BufferAttribute(randoms, 3));
-        
-        setGeometry(bufferGeo);
+      }
+
+      const bufferGeo = new THREE.BufferGeometry();
+      bufferGeo.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
+      bufferGeo.setAttribute('aScale', new THREE.Float32BufferAttribute(scales, 1));
+      bufferGeo.setAttribute('aRandom', new THREE.Float32BufferAttribute(randoms, 3));
+
+      setGeometry(bufferGeo);
     });
   }, []);
 
   useFrame((state) => {
     if (material) {
-        material.uniforms.uTime.value = state.clock.getElapsedTime();
-        material.uniforms.uMouse.value.set(
-            (state.mouse.x * viewport.width) / 2,
-            (state.mouse.y * viewport.height) / 2,
-            0
-        );
+      material.uniforms.uTime.value = state.clock.getElapsedTime();
+      material.uniforms.uMouse.value.set(
+        (state.mouse.x * viewport.width) / 2,
+        (state.mouse.y * viewport.height) / 2,
+        0
+      );
     }
-    
+
     // RESPONSIVE SCALING
     // "PRECISION" text width logic
     if (pointsRef.current && geometry) {
-        const baseWidth = 45; // Approx width of "PRECISION"
-        // Fit within 85% of viewport width
-        const targetScale = (viewport.width * 0.85) / baseWidth;
-        // Clamp max scale so it doesn't get too huge on desktop
-        const finalScale = Math.min(1.0, targetScale);
-        
-        pointsRef.current.scale.setScalar(finalScale);
+      const baseWidth = 45; // Approx width of "PRECISION"
+      // Fit within 85% of viewport width
+      const targetScale = (viewport.width * 0.85) / baseWidth;
+      // Clamp max scale so it doesn't get too huge on desktop
+      const finalScale = Math.min(1.0, targetScale);
+
+      pointsRef.current.scale.setScalar(finalScale);
     }
   });
 
@@ -178,10 +178,10 @@ const Particles = () => {
 export const ParticleText = () => {
   return (
     <div className="w-full h-full bg-[#1F0B05]">
-        <Canvas camera={{ position: [0, 0, 20], fov: 45 }}>
-            <ambientLight intensity={0.5} />
-            <Particles />
-        </Canvas>
+      <Canvas camera={{ position: [0, 0, 20], fov: 45 }}>
+        <ambientLight intensity={0.5} />
+        <Particles />
+      </Canvas>
     </div>
   );
 };

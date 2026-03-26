@@ -10,12 +10,12 @@ export const FONTS = {
 };
 
 export const SERVICES = [
-  { id: 1, label: 'Strzyżenie męskie' },
-  { id: 2, label: 'Strzyżenie dzieci' },
-  { id: 3, label: 'Combo (głowa + broda)' },
-  { id: 4, label: 'Strzyżenie brody' },
-  { id: 5, label: 'Cover (odsiwianie)' },
-  { id: 6, label: 'Strzyżenie + Cover' },
-  { id: 7, label: 'Combo + Spa' },
-  { id: 8, label: 'Broda + Spa' },
+  { id: 1, label: 'Security Audit' },
+  { id: 2, label: 'Penetration Testing' },
+  { id: 3, label: 'Network Hardening' },
+  { id: 4, label: 'Identity Protection' },
+  { id: 5, label: 'Data Encryption Setup' },
+  { id: 6, label: 'Threat Monitoring' },
+  { id: 7, label: 'Incident Response + Recovery' },
+  { id: 8, label: 'Full Security Suite' },
 ];

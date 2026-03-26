@@ -24,18 +24,18 @@ export const CloseIcon = ({ className }: { className?: string }) => (
 export const OvalNumber = ({ num }: { num: number }) => (
   <span className="inline-flex items-center justify-center relative mx-1 align-middle" style={{ width: '2.4em', height: '1.4em' }}>
     <svg viewBox="0 0 40 24" className="absolute inset-0 w-full h-full text-current" fill="none" stroke="currentColor" strokeWidth="1">
-       <ellipse cx="20" cy="12" rx="19" ry="11" />
+      <ellipse cx="20" cy="12" rx="19" ry="11" />
     </svg>
     <span className="font-body text-[0.65em] font-bold relative z-10 translate-y-[1px]">
-        {num.toString().padStart(2, '0')}
+      {num.toString().padStart(2, '0')}
     </span>
   </span>
 );
 
 export const LogoStack = ({ className }: { className?: string }) => (
   <div className={`flex flex-col leading-[0.75] text-[10px] tracking-tighter font-display font-bold ${className}`}>
-    <span>BARBER</span>
-    <span>BARBER</span>
-    <span>BARBER</span>
+    <span>SECUREX</span>
+    <span>SECUREX</span>
+    <span>SECUREX</span>
   </div>
 );
