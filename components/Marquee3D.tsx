@@ -43,9 +43,9 @@ const CylinderText = ({ text, position, rotationSpeed = 0.5, color = COLORS.PRIM
 const KineticScene = () => {
   return (
     <group>
-      <CylinderText text="SECURE" position={[0, 1.5, 0]} rotationSpeed={0.4} color="#FF6600" />
-      <CylinderText text="EST. 2016 • WARSAW" position={[0, 0, 0]} rotationSpeed={-0.4} color="#F5F5F5" />
-      <CylinderText text="CYBER DEFENSE" position={[0, -1.5, 0]} rotationSpeed={0.4} color="#FF6600" />
+      <CylinderText text="SECURE" position={[0, 1.5, 0]} rotationSpeed={0.4} color="#0055FF" />
+      <CylinderText text="EST. 2016 • WARSAW" position={[0, 0, 0]} rotationSpeed={-0.4} color="#111111" />
+      <CylinderText text="CYBER DEFENSE" position={[0, -1.5, 0]} rotationSpeed={0.4} color="#0055FF" />
     </group>
   )
 }
@@ -57,14 +57,14 @@ export const Marquee3D = () => {
         camera={{ position: [0, 0, 12], fov: 35 }}
         dpr={[1, 2]}
       >
-        {/* Match the background color to Section 2 Right (#1F0B05) */}
-        <color attach="background" args={['#1F0B05']} />
+        {/* Match the background color to Section 2 Right (#FFFFFF) */}
+        <color attach="background" args={['#FFFFFF']} />
 
         <KineticScene />
 
         <ambientLight intensity={0.5} />
         <Environment preset="studio" />
-        <fog attach="fog" args={['#1F0B05', 8, 20]} />
+        <fog attach="fog" args={['#FFFFFF', 8, 20]} />
       </Canvas>
     </div>
   );

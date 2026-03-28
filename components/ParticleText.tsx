@@ -18,7 +18,7 @@ const Particles = () => {
     uniforms: {
       uTime: { value: 0 },
       uMouse: { value: new THREE.Vector3(0, 0, 0) },
-      uColor: { value: new THREE.Color('#FF6600') },
+      uColor: { value: new THREE.Color('#0055FF') },
       uHoverColor: { value: new THREE.Color('#00FFFF') } // Cyan color burst
     },
     vertexShader: `
@@ -102,7 +102,7 @@ const Particles = () => {
     const loader = new FontLoader();
     loader.load(fontUrl, (font) => {
       // Reverted text to "PRECISION"
-      const denseGeo = new TextGeometry('SECURE', {
+      const denseGeo = new TextGeometry('PRECISION', {
         font: font,
         size: 7.5,
         depth: 0.5,
@@ -177,7 +177,7 @@ const Particles = () => {
 
 export const ParticleText = () => {
   return (
-    <div className="w-full h-full bg-[#1F0B05]">
+    <div className="w-full h-full bg-[#FFFFFF]">
       <Canvas camera={{ position: [0, 0, 20], fov: 45 }}>
         <ambientLight intensity={0.5} />
         <Particles />

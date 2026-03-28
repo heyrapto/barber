@@ -91,7 +91,7 @@ const PrismItem: React.FC<PrismItemProps> = ({
                     <Text 
                         fontSize={0.5} 
                         font="https://fonts.gstatic.com/s/oswald/v49/TK3iWkUHHAIjg752GT8G.woff"
-                        color="#FF6600"
+                        color="#0055FF"
                         anchorX="center"
                         anchorY="middle"
                     >
@@ -112,7 +112,7 @@ const PrismItem: React.FC<PrismItemProps> = ({
                 {/* Border */}
                 <mesh position={[0, 0, -0.01]}>
                     <planeGeometry args={[WIDTH + 0.1, HEIGHT + 0.1]} />
-                    <meshBasicMaterial color="#FF6600" />
+                    <meshBasicMaterial color="#0055FF" />
                 </mesh>
             </mesh>
 
@@ -145,11 +145,11 @@ const PrismItem: React.FC<PrismItemProps> = ({
             <group rotation={[0, (Math.PI * 4) / 3, 0]}>
                 <mesh position={[0, 0, APOTHEM]}>
                     <planeGeometry args={[WIDTH, HEIGHT]} />
-                    <meshStandardMaterial color="#FF6600" roughness={0.8} />
+                    <meshStandardMaterial color="#0055FF" roughness={0.8} />
                     <Text 
                         fontSize={1.2} 
                         font="https://fonts.gstatic.com/s/oswald/v49/TK3iWkUHHAIjg752GT8G.woff"
-                        color="#1F0B05"
+                        color="#FFFFFF"
                         anchorX="center"
                         anchorY="middle"
                         rotation={[0, 0, Math.PI/2]}
@@ -163,7 +163,7 @@ const PrismItem: React.FC<PrismItemProps> = ({
             {/* Internal Core */}
             <mesh rotation={[0, Math.PI/2, 0]}>
                 <cylinderGeometry args={[1.5, 1.5, HEIGHT, 3]} />
-                <meshBasicMaterial color="#111" />
+                <meshBasicMaterial color="#F8F9FA" />
             </mesh>
         </group>
     );
@@ -205,7 +205,7 @@ const GalleryScene = () => {
 
 // --- LOADING FALLBACK ---
 const Loader = () => (
-    <Text color="#FF6600" fontSize={0.5} position={[0,0,0]}>
+    <Text color="#0055FF" fontSize={0.5} position={[0,0,0]}>
         LOADING PORTFOLIO...
     </Text>
 );
@@ -216,7 +216,7 @@ export const RazorGallery = () => {
       <Canvas camera={{ position: [0, 0, 12], fov: 35 }} dpr={[1, 2]}>
         <ambientLight intensity={1.5} />
         <pointLight position={[10, 10, 10]} intensity={1.0} color="white" />
-        <pointLight position={[-10, 0, 10]} intensity={2.0} color="#FF6600" />
+        <pointLight position={[-10, 0, 10]} intensity={2.0} color="#0055FF" />
         
         <Suspense fallback={<Loader />}>
             <Environment preset="city" />

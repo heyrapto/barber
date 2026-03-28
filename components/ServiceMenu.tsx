@@ -11,19 +11,19 @@ const SERVICES = [
 
 export const ServiceMenu = () => {
     return (
-        <div className="w-full min-h-screen bg-[#FF6600] text-[#1F0B05] relative overflow-hidden flex flex-col items-center py-12 md:py-20 px-4 md:px-10 border-t-8 border-[#1F0B05]">
+        <div className="w-full min-h-screen bg-[#0055FF] text-[#FFFFFF] relative overflow-hidden flex flex-col items-center py-12 md:py-20 px-4 md:px-10 border-t-8 border-[#FFFFFF]">
 
             {/* Background Texture Pattern (CSS Dots) */}
             <div className="absolute inset-0 opacity-10 pointer-events-none"
-                style={{ backgroundImage: 'radial-gradient(#1F0B05 1px, transparent 1px)', backgroundSize: '20px 20px' }}>
+                style={{ backgroundImage: 'radial-gradient(#FFFFFF 1px, transparent 1px)', backgroundSize: '20px 20px' }}>
             </div>
 
             {/* Header */}
-            <div className="w-full max-w-6xl mb-10 md:mb-16 relative z-10 flex flex-col md:flex-row justify-between items-start md:items-end border-b-4 border-[#1F0B05] pb-4 gap-4">
+            <div className="w-full max-w-6xl mb-10 md:mb-16 relative z-10 flex flex-col md:flex-row justify-between items-start md:items-end border-b-4 border-[#FFFFFF] pb-4 gap-4">
                 <h2 className="font-display font-bold text-6xl md:text-9xl tracking-tighter uppercase leading-[0.8]">
                     Service<br />List
                 </h2>
-                <div className="text-left md:text-right w-full md:w-auto flex flex-row md:flex-col justify-between md:justify-end items-end md:items-end border-t-2 md:border-t-0 border-[#1F0B05]/20 pt-2 md:pt-0">
+                <div className="text-left md:text-right w-full md:w-auto flex flex-row md:flex-col justify-between md:justify-end items-end md:items-end border-t-2 md:border-t-0 border-[#FFFFFF]/20 pt-2 md:pt-0">
                     <span className="font-display font-bold text-lg md:text-xl tracking-widest uppercase block mb-1">Currency: PLN</span>
                     <span className="font-body font-bold text-xs md:text-sm tracking-wider uppercase block opacity-80">Inclusive of VAT</span>
                 </div>
@@ -35,9 +35,9 @@ export const ServiceMenu = () => {
                     <div key={service.id} className="group relative w-full min-h-[5rem] md:h-32 perspective-1000">
 
                         {/* Visual Container */}
-                        <div className="relative w-full h-full bg-[#1F0B05] text-[#FF6600] flex items-center justify-between px-4 md:px-12 py-4 md:py-0
+                        <div className="relative w-full h-full bg-[#FFFFFF] text-[#0055FF] flex items-center justify-between px-4 md:px-12 py-4 md:py-0
                                     transition-all duration-300 ease-out transform origin-center
-                                    group-hover:scale-[1.02] group-hover:bg-[#F5F5F5] group-hover:text-[#1F0B05] 
+                                    group-hover:scale-[1.02] group-hover:bg-[#111111] group-hover:text-[#FFFFFF] 
                                     shadow-[4px_4px_0px_rgba(31,11,5,0.3)] md:shadow-[8px_8px_0px_rgba(31,11,5,0.3)]">
 
                             {/* Left: ID & Name */}
@@ -58,10 +58,10 @@ export const ServiceMenu = () => {
                             </div>
 
                             {/* Hover Description Reveal (Slide In) */}
-                            <div className="absolute inset-0 bg-[#FF6600] text-[#1F0B05] flex items-center justify-center 
+                            <div className="absolute inset-0 bg-[#0055FF] text-[#FFFFFF] flex items-center justify-center 
                                         transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-[cubic-bezier(0.25,1,0.5,1)]
                                         overflow-hidden pointer-events-none z-20">
-                                <div className="w-full h-full border-2 md:border-4 border-[#1F0B05] flex flex-col md:flex-row items-center justify-center md:justify-between px-4 md:px-10 py-2 gap-1 md:gap-4">
+                                <div className="w-full h-full border-2 md:border-4 border-[#FFFFFF] flex flex-col md:flex-row items-center justify-center md:justify-between px-4 md:px-10 py-2 gap-1 md:gap-4">
                                     <span className="font-display font-bold text-lg md:text-2xl uppercase tracking-widest hidden md:block">{service.name}</span>
                                     <span className="font-body font-bold text-xs sm:text-sm md:text-xl uppercase tracking-wider text-center">{service.desc}</span>
                                     <span className="font-display font-bold text-2xl md:text-3xl hidden md:block">{service.price}</span>
@@ -69,17 +69,17 @@ export const ServiceMenu = () => {
                             </div>
 
                             {/* Decorative 'Cut' Lines - Hidden on mobile to reduce noise */}
-                            <div className="hidden md:block absolute top-0 left-4 w-[2px] h-4 bg-[#FF6600] group-hover:bg-[#1F0B05]"></div>
-                            <div className="hidden md:block absolute bottom-0 left-4 w-[2px] h-4 bg-[#FF6600] group-hover:bg-[#1F0B05]"></div>
-                            <div className="hidden md:block absolute top-0 right-4 w-[2px] h-4 bg-[#FF6600] group-hover:bg-[#1F0B05]"></div>
-                            <div className="hidden md:block absolute bottom-0 right-4 w-[2px] h-4 bg-[#FF6600] group-hover:bg-[#1F0B05]"></div>
+                            <div className="hidden md:block absolute top-0 left-4 w-[2px] h-4 bg-[#0055FF] group-hover:bg-[#FFFFFF]"></div>
+                            <div className="hidden md:block absolute bottom-0 left-4 w-[2px] h-4 bg-[#0055FF] group-hover:bg-[#FFFFFF]"></div>
+                            <div className="hidden md:block absolute top-0 right-4 w-[2px] h-4 bg-[#0055FF] group-hover:bg-[#FFFFFF]"></div>
+                            <div className="hidden md:block absolute bottom-0 right-4 w-[2px] h-4 bg-[#0055FF] group-hover:bg-[#FFFFFF]"></div>
                         </div>
                     </div>
                 ))}
             </div>
 
             {/* Footer Note */}
-            <div className="w-full max-w-6xl mt-10 md:mt-16 text-center md:text-left font-body uppercase tracking-widest text-xs md:text-sm opacity-80 border-t-2 border-[#1F0B05] pt-4 md:pt-6 flex flex-col md:flex-row justify-between gap-2">
+            <div className="w-full max-w-6xl mt-10 md:mt-16 text-center md:text-left font-body uppercase tracking-widest text-xs md:text-sm opacity-80 border-t-2 border-[#FFFFFF] pt-4 md:pt-6 flex flex-col md:flex-row justify-between gap-2">
                 <span>All systems monitored & secured 24/7</span>
                 <span>Global • Remote Operations</span>
             </div>

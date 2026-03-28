@@ -185,7 +185,7 @@ export const HeroOverlay = () => {
         
         <directionalLight position={[10, 5, 5]} intensity={2.0} color="#ffffff" />
         <directionalLight position={[-10, 5, 2]} intensity={1.5} color="#FFDDBB" />
-        <directionalLight position={[0, -10, 5]} intensity={1.0} color="#FF6600" />
+        <directionalLight position={[0, -10, 5]} intensity={1.0} color="#0055FF" />
         
         <HeroRazors />
       </Canvas>

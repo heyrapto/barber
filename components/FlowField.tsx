@@ -22,7 +22,7 @@ const HairStrands = () => {
     }, []);
 
     const material = useMemo(() => new THREE.MeshStandardMaterial({
-        color: '#1F0B05', // Dark brown/black hair
+        color: '#FFFFFF', // Dark brown/black hair
         roughness: 0.6,
         metalness: 0.1,
     }), []);
@@ -92,7 +92,7 @@ export const FlowField = () => {
         <div className="w-full h-full">
             <Canvas camera={{ position: [0, 0, 15], fov: 45 }} dpr={[1, 2]}>
                 {/* HERO SECTION BACKGROUND COLOR (Orange) */}
-                <color attach="background" args={['#FF6600']} />
+                <color attach="background" args={['#0055FF']} />
                 
                 <ambientLight intensity={1.5} />
                 <directionalLight position={[10, 10, 10]} intensity={2} />

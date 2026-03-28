@@ -3,14 +3,14 @@
 @tailwind utilities;
 
 :root {
-  --color-primary: #FF6600; /* Vibrant Orange */
-  --color-dark: #1A0500; /* Deep Brown/Black */
+  --color-primary: #0055FF; /* Vibrant Orange */
+  --color-dark: #FFFFFF; /* Deep Brown/Black */
   --font-display: 'Antonio', 'Oswald', sans-serif;
   --font-body: 'Roboto Condensed', sans-serif;
 }
 
 body {
-  background-color: #000;
+  background-color: #F0F0F0;
   color: var(--color-dark);
   margin: 0;
   padding: 0;
@@ -31,7 +31,7 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #111;
+  background: #F8F9FA;
 }
 
 ::-webkit-scrollbar-thumb {

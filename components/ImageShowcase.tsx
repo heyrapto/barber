@@ -12,11 +12,11 @@ export const ImageShowcase = () => {
   const [hoverIndex, setHoverIndex] = useState<number | null>(null);
 
   return (
-    <div className="w-full h-[75vh] bg-[#111] border-t-8 border-[#FF6600] relative overflow-hidden flex flex-col md:flex-row p-0 md:p-0">
+    <div className="w-full h-[75vh] bg-[#F8F9FA] border-t-8 border-[#0055FF] relative overflow-hidden flex flex-col md:flex-row p-0 md:p-0">
         
         {/* DECORATIVE HEADER */}
         <div className="absolute top-4 left-6 z-30 pointer-events-none mix-blend-difference">
-            <h3 className="font-display font-bold text-[#F5F5F5] text-sm tracking-[0.4em] uppercase">
+            <h3 className="font-display font-bold text-[#111111] text-sm tracking-[0.4em] uppercase">
                 Selection
             </h3>
         </div>
@@ -33,7 +33,7 @@ export const ImageShowcase = () => {
                     className={`
                         relative h-full flex-1
                         transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)]
-                        overflow-hidden cursor-pointer group border-r border-[#FF6600]/20 last:border-0
+                        overflow-hidden cursor-pointer group border-r border-[#0055FF]/20 last:border-0
                         /* Diagonal Cut Logic */
                         md:transform md:-skew-x-12 md:origin-bottom
                         /* Hover Expansion */
@@ -48,7 +48,7 @@ export const ImageShowcase = () => {
                     <div className="absolute inset-[-20%] w-[140%] h-[140%] md:transform md:skew-x-12 md:origin-bottom">
                         
                         {/* IMAGE LAYER */}
-                        <div className="absolute inset-0 bg-[#1F0B05]">
+                        <div className="absolute inset-0 bg-[#FFFFFF]">
                             <img 
                                 src={item.img} 
                                 alt={item.title}
@@ -58,7 +58,7 @@ export const ImageShowcase = () => {
                                 `} 
                             />
                             {/* Orange tint overlay that fades on hover */}
-                            <div className={`absolute inset-0 bg-[#FF6600] mix-blend-multiply transition-opacity duration-500 ${isHovered ? 'opacity-0' : 'opacity-40'}`}></div>
+                            <div className={`absolute inset-0 bg-[#0055FF] mix-blend-multiply transition-opacity duration-500 ${isHovered ? 'opacity-0' : 'opacity-40'}`}></div>
                             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20"></div>
                         </div>
 
@@ -70,18 +70,18 @@ export const ImageShowcase = () => {
                                 <span className={`
                                     font-display font-bold text-6xl text-transparent stroke-text
                                     transition-all duration-500
-                                    ${isHovered ? 'translate-y-0 opacity-100 text-[#FF6600]' : '-translate-y-4 opacity-50'}
-                                `} style={{ WebkitTextStroke: '1px #FF6600' }}>
+                                    ${isHovered ? 'translate-y-0 opacity-100 text-[#0055FF]' : '-translate-y-4 opacity-50'}
+                                `} style={{ WebkitTextStroke: '1px #0055FF' }}>
                                     {item.id}
                                 </span>
-                                <ArrowCircleRight className={`w-8 h-8 text-[#FF6600] transition-opacity duration-300 ${isHovered ? 'opacity-100' : 'opacity-0'}`} />
+                                <ArrowCircleRight className={`w-8 h-8 text-[#0055FF] transition-opacity duration-300 ${isHovered ? 'opacity-100' : 'opacity-0'}`} />
                             </div>
 
                             {/* Bottom Text */}
                             <div className="relative">
                                 {/* Default Title (Visible when idle) */}
                                 <h2 className={`
-                                    font-display font-bold text-5xl md:text-7xl text-[#F5F5F5] uppercase tracking-tighter
+                                    font-display font-bold text-5xl md:text-7xl text-[#111111] uppercase tracking-tighter
                                     transition-all duration-500 origin-left
                                     ${isHovered ? 'opacity-0 translate-y-8 blur-sm' : 'opacity-100 translate-y-0 blur-0'}
                                 `}>
@@ -94,12 +94,12 @@ export const ImageShowcase = () => {
                                     transition-all duration-500
                                     ${isHovered ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12 pointer-events-none'}
                                 `}>
-                                    <h2 className="font-display font-bold text-7xl md:text-9xl text-[#FF6600] uppercase tracking-tighter leading-[0.8]">
+                                    <h2 className="font-display font-bold text-7xl md:text-9xl text-[#0055FF] uppercase tracking-tighter leading-[0.8]">
                                         {item.title}
                                     </h2>
                                     <div className="flex items-center space-x-4 mt-2">
-                                        <div className="h-1 w-16 bg-[#F5F5F5]"></div>
-                                        <span className="font-body font-bold text-[#F5F5F5] text-lg tracking-[0.5em] uppercase">
+                                        <div className="h-1 w-16 bg-[#111111]"></div>
+                                        <span className="font-body font-bold text-[#111111] text-lg tracking-[0.5em] uppercase">
                                             {item.subtitle}
                                         </span>
                                     </div>
@@ -116,7 +116,7 @@ export const ImageShowcase = () => {
                     </div>
                     
                     {/* Vertical Divider Line (Visual fix for skew edges) */}
-                    <div className="absolute top-0 right-0 w-[1px] h-full bg-[#FF6600]/30 z-20"></div>
+                    <div className="absolute top-0 right-0 w-[1px] h-full bg-[#0055FF]/30 z-20"></div>
                 </div>
             );
         })}

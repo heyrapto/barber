@@ -42,85 +42,85 @@ export const createSquareOrangeTexture = (): THREE.CanvasTexture => {
 
     // Arrow (Left Box)
     ctx.beginPath();
-    ctx.moveTo(90, headerH/2); ctx.lineTo(50, headerH/2);
-    ctx.moveTo(70, headerH/2 - 15); ctx.lineTo(50, headerH/2); ctx.lineTo(70, headerH/2 + 15);
+    ctx.moveTo(90, headerH / 2); ctx.lineTo(50, headerH / 2);
+    ctx.moveTo(70, headerH / 2 - 15); ctx.lineTo(50, headerH / 2); ctx.lineTo(70, headerH / 2 + 15);
     ctx.stroke();
 
     // Header Center Text
     ctx.font = 'bold 36px Oswald';
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
-    ctx.fillText('20', width/2 - 200, headerH/2);
-    ctx.fillText('16', width/2 + 200, headerH/2);
-    
+    ctx.fillText('20', width / 2 - 200, headerH / 2);
+    ctx.fillText('16', width / 2 + 200, headerH / 2);
+
     ctx.save();
-    ctx.translate(width/2, headerH/2);
+    ctx.translate(width / 2, headerH / 2);
     ctx.scale(1, 1.4);
     ctx.font = 'bold 130px Oswald';
-    ctx.fillText("ANGIE'S", 0, 5);
+    ctx.fillText("SECURE", 0, 5);
     ctx.restore();
 
     // Right Logo Stack
     const logoX = width - 70;
     ctx.font = 'bold 28px Oswald';
-    ctx.fillText('BARBER', logoX, headerH/2 - 28);
-    ctx.fillText('BARBER', logoX, headerH/2);
-    ctx.fillText('BARBER', logoX, headerH/2 + 28);
+    ctx.fillText('BARBER', logoX, headerH / 2 - 28);
+    ctx.fillText('BARBER', logoX, headerH / 2);
+    ctx.fillText('BARBER', logoX, headerH / 2 + 28);
 
     // --- Main Content ---
     const centerY = height * 0.48;
-    
+
     // Sub-label
     ctx.fillStyle = COLORS.DARK;
     ctx.font = 'bold 24px Roboto Condensed';
     ctx.letterSpacing = '3px';
-    ctx.fillText('FRYZJER MĘSKI', width/2, centerY - 180);
+    ctx.fillText('FRYZJER MĘSKI', width / 2, centerY - 180);
     ctx.letterSpacing = '0px';
 
     // Massive Headline
     ctx.save();
-    ctx.translate(width/2, centerY - 20);
+    ctx.translate(width / 2, centerY - 20);
     // Adjusted scale for better breathing room on 3D mesh
     ctx.scale(0.75, 1.6);
     ctx.font = 'bold 220px Oswald';
-    ctx.fillText("ANGIE'S BARBER", 0, 0);
+    ctx.fillText("SECURE", 0, 0);
     ctx.restore();
 
     // Est
     ctx.font = 'bold 32px Roboto Condensed';
-    ctx.fillText('EST. 2016', width/2, centerY + 140);
+    ctx.fillText('EST. 2016', width / 2, centerY + 140);
 
     // List - Improved spacing
     const listStartY = centerY + 220;
     ctx.font = '24px Roboto Condensed'; // Slightly larger for readability
-    
+
     const services = [
-       ['Strzyżenie męskie', 'Strzyżenie dzieci'],
-       ['Combo (głowa + broda)', 'Strzyżenie brody'],
-       ['Cover (odsiwianie)', 'Strzyżenie + Cover'],
-       ['Combo + Spa', 'Broda + Spa']
+        ['Strzyżenie męskie', 'Strzyżenie dzieci'],
+        ['Combo (głowa + broda)', 'Strzyżenie brody'],
+        ['Cover (odsiwianie)', 'Strzyżenie + Cover'],
+        ['Combo + Spa', 'Broda + Spa']
     ];
 
     services.forEach((row, i) => {
         const y = listStartY + (i * 45); // Increased gap
-        
+
         // Item 1
-        const x1 = width/2 - 200; // Wider spread
-        drawOvalNumber(ctx, i*2 + 1, x1, y, COLORS.DARK);
+        const x1 = width / 2 - 200; // Wider spread
+        drawOvalNumber(ctx, i * 2 + 1, x1, y, COLORS.DARK);
         ctx.fillStyle = COLORS.DARK;
         ctx.textAlign = 'left';
         ctx.fillText(row[0], x1 + 40, y + 2);
 
         // Item 2
-        const x2 = width/2 + 60; // Wider spread
-        drawOvalNumber(ctx, i*2 + 2, x2, y, COLORS.DARK);
+        const x2 = width / 2 + 60; // Wider spread
+        drawOvalNumber(ctx, i * 2 + 2, x2, y, COLORS.DARK);
         ctx.fillStyle = COLORS.DARK;
         ctx.fillText(row[1], x2 + 40, y + 2);
     });
 
     // Stamp
     ctx.save();
-    ctx.translate(width/2, listStartY + 150);
+    ctx.translate(width / 2, listStartY + 150);
     ctx.rotate(-0.1);
     ctx.lineWidth = 4;
     ctx.strokeStyle = COLORS.DARK;
@@ -151,18 +151,18 @@ export const createSquareOrangeTexture = (): THREE.CanvasTexture => {
     // Footer Center
     ctx.font = 'bold 36px Oswald';
     ctx.textAlign = 'center';
-    ctx.fillText('20', width/2 - 180, footerY + footerH/2);
-    ctx.fillText('16', width/2 + 180, footerY + footerH/2);
+    ctx.fillText('20', width / 2 - 180, footerY + footerH / 2);
+    ctx.fillText('16', width / 2 + 180, footerY + footerH / 2);
     ctx.save();
-    ctx.translate(width/2, footerY + footerH/2);
+    ctx.translate(width / 2, footerY + footerH / 2);
     ctx.scale(1, 1.4);
     ctx.font = 'bold 80px Oswald';
-    ctx.fillText("ANGIE'S", 0, 5);
+    ctx.fillText("SECURE", 0, 5);
     ctx.restore();
 
     // Circle Arrow
     const caX = width - 60;
-    const caY = footerY + footerH/2;
+    const caY = footerY + footerH / 2;
     ctx.beginPath();
     ctx.arc(caX, caY, 24, 0, Math.PI * 2);
     ctx.stroke();
@@ -186,7 +186,7 @@ export const createColorfulCardTexture = (img?: HTMLImageElement): THREE.CanvasT
     if (!ctx) return new THREE.CanvasTexture(canvas);
 
     // Background
-    ctx.fillStyle = '#111';
+    ctx.fillStyle = '#F8F9FA';
     ctx.fillRect(0, 0, width, height);
 
     // Draw Image fully vivid
@@ -201,14 +201,14 @@ export const createColorfulCardTexture = (img?: HTMLImageElement): THREE.CanvasT
     // Overlay Graphics (White text for contrast on colorful bg)
     const ORANGE = COLORS.PRIMARY;
     const WHITE = '#FFFFFF';
-    
+
     ctx.strokeStyle = ORANGE;
     ctx.fillStyle = WHITE; // Text is white now
 
     // Header
     const headerH = 160;
     ctx.lineWidth = 4; // Thicker lines
-    
+
     // Top/Bottom Lines
     ctx.beginPath();
     ctx.moveTo(0, 4); ctx.lineTo(width, 4);
@@ -224,7 +224,7 @@ export const createColorfulCardTexture = (img?: HTMLImageElement): THREE.CanvasT
     // Left Icon (Simple Lines)
     ctx.strokeStyle = WHITE;
     ctx.beginPath();
-    ctx.moveTo(60, headerH/2); ctx.lineTo(100, headerH/2);
+    ctx.moveTo(60, headerH / 2); ctx.lineTo(100, headerH / 2);
     ctx.stroke();
     ctx.strokeStyle = ORANGE;
 
@@ -232,24 +232,24 @@ export const createColorfulCardTexture = (img?: HTMLImageElement): THREE.CanvasT
     ctx.font = 'bold 30px Oswald';
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
-    ctx.fillText('20', width/2 - 200, headerH/2);
-    ctx.fillText('16', width/2 + 200, headerH/2);
-    
+    ctx.fillText('20', width / 2 - 200, headerH / 2);
+    ctx.fillText('16', width / 2 + 200, headerH / 2);
+
     ctx.save();
-    ctx.translate(width/2, headerH/2);
+    ctx.translate(width / 2, headerH / 2);
     ctx.scale(1, 1.4);
     ctx.font = 'bold 120px Oswald';
     ctx.fillStyle = ORANGE;
-    ctx.fillText("ANGIE'S", 0, 5);
+    ctx.fillText("SECURE", 0, 5);
     ctx.restore();
 
     // Right Logo
     const logoX = width - 80;
     ctx.fillStyle = WHITE;
     ctx.font = 'bold 28px Oswald';
-    ctx.fillText('BARBER', logoX, headerH/2 - 30);
-    ctx.fillText('BARBER', logoX, headerH/2);
-    ctx.fillText('BARBER', logoX, headerH/2 + 30);
+    ctx.fillText('BARBER', logoX, headerH / 2 - 30);
+    ctx.fillText('BARBER', logoX, headerH / 2);
+    ctx.fillText('BARBER', logoX, headerH / 2 + 30);
 
     const texture = new THREE.CanvasTexture(canvas);
     texture.anisotropy = 16;

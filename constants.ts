@@ -1,7 +1,7 @@
 export const COLORS = {
-  PRIMARY: '#FF6600', // Matches the vibrant orange
-  DARK: '#1F0B05',    // Very dark brown, almost black
-  OFF_WHITE: '#F5F5F5',
+  PRIMARY: '#0055FF', // Matches the vibrant orange
+  DARK: '#FFFFFF',    // Very dark brown, almost black
+  OFF_WHITE: '#111111',
 };
 
 export const FONTS = {

@@ -23,8 +23,8 @@ class SceneErrorBoundary extends React.Component<SceneErrorBoundaryProps, SceneE
     this.props = props;
   }
 
-  static getDerivedStateFromError(): SceneErrorBoundaryState { 
-    return { hasError: true }; 
+  static getDerivedStateFromError(): SceneErrorBoundaryState {
+    return { hasError: true };
   }
 
   render() {
@@ -40,7 +40,7 @@ const SceneContent = () => {
 
   // Load a VIBRANT image
   // Using a specific Unsplash ID known for neon/cyberpunk vibes to pop against the black/orange
-  const darkCardBg = useLoader(THREE.TextureLoader, 'https://images.unsplash.com/photo-1599351431202-1e0f0137899a?q=80&w=988&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', (loader) => {
+  const darkCardBg = useLoader(THREE.TextureLoader, '/privacy.png', (loader) => {
     loader.setCrossOrigin('anonymous');
   });
 
@@ -50,7 +50,7 @@ const SceneContent = () => {
   }, [darkCardBg]);
 
   // RESPONSIVE SIZING
-  const CARD_ASPECT = 1.6; 
+  const CARD_ASPECT = 1.6;
   const targetWidthFromWidth = viewport.width * 0.85;
   const targetWidthFromHeight = (viewport.height * 0.85) / CARD_ASPECT;
   const FINAL_WIDTH = Math.min(targetWidthFromWidth, targetWidthFromHeight);
@@ -63,24 +63,24 @@ const SceneContent = () => {
       <ambientLight intensity={0.8} />
       <directionalLight position={[5, 10, 7]} intensity={2.0} />
       {/* Colorful lights to enhance the cloth wrinkles */}
-      <pointLight position={[-5, 2, 5]} intensity={1.5} color="#FF6600" />
+      <pointLight position={[-5, 2, 5]} intensity={1.5} color="#0055FF" />
       <pointLight position={[5, -2, 5]} intensity={1.0} color="#00FFFF" />
-      
+
       <group position={[0, 0, 0]}>
-         <Float 
-            speed={1.5} 
-            rotationIntensity={0.1} 
-            floatIntensity={0.2} 
-            floatingRange={[-0.1, 0.1]}
-         >
-            <ClothCard 
-                texture={texture} 
-                position={[0, 0, 0]} 
-                scale={[FINAL_WIDTH, FINAL_HEIGHT, 1]} 
-            />
-         </Float>
+        <Float
+          speed={1.5}
+          rotationIntensity={0.1}
+          floatIntensity={0.2}
+          floatingRange={[-0.1, 0.1]}
+        >
+          <ClothCard
+            texture={texture}
+            position={[0, 0, 0]}
+            scale={[FINAL_WIDTH, FINAL_HEIGHT, 1]}
+          />
+        </Float>
       </group>
-      
+
       <Environment preset="night" />
     </>
   );
@@ -90,9 +90,9 @@ export const Scene = () => {
   return (
     <div className="w-full h-full relative">
       <Canvas camera={{ position: [0, 0, 14], fov: 35 }} dpr={[1, 2]}>
-        <SceneErrorBoundary fallback={<Text color="#FF6600">Loading...</Text>}>
+        <SceneErrorBoundary fallback={<Text color="#0055FF">Loading...</Text>}>
           <Suspense fallback={null}>
-              <SceneContent />
+            <SceneContent />
           </Suspense>
         </SceneErrorBoundary>
       </Canvas>
